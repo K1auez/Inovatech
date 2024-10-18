@@ -39,7 +39,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
         // Verifica se há valor anual
         if ($result_anual->num_rows > 0) {
             $row_anual = $result_anual->fetch_assoc();
-            $valor_anual = $row_anual['valor_anual']; // Atribui o valor anual
+            $valor_anual = $row_anual['valor_anual'];
         }
 
         $stmt_anual->close();
