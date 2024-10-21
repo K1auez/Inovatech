@@ -2,6 +2,15 @@
 session_start();
 include './conexao.php';
 
+if (isset($_SESSION['mensagem'])) {
+    echo "<script>
+        window.onload = function() {
+            alert('" . $_SESSION['mensagem'] . "');
+        };
+    </script>";
+    unset($_SESSION['mensagem']);
+}
+
 $valor_mensal = null; // Inicializa com null para o valor mensal
 $valor_anual = null;  // Inicializa com null para o valor anual
 
