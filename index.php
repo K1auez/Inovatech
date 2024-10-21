@@ -236,7 +236,17 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
             <span><?php echo isset($valor_mensal) ? number_format($valor_mensal, 2, ',', '.') : '...'; ?></span>
             <span>/mês</span>
         </div>
-        <button class="btn-price" id="openModalBtn">Calcular orçamento</button>
+        <?php
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+    if ($result_mensal->num_rows > 0) {
+        echo '<a href="assinaturaMensal.php" class="btn-price" id="openModalBtn">Finalizar</a>';
+    } else {
+        echo '<button class="btn-price" id="openModalBtn">Calcular orçamento</button>';
+    }
+} else {
+    echo '<button class="btn-price" id="openModalBtn">Calcular orçamento</button>';
+}
+?>
     </div>
    </div>
 
@@ -264,17 +274,28 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
             <span><?php echo isset($valor_anual) ? number_format($valor_anual, 2, ',', '.') : '...'; ?></span>
             <span>/mês</span>
         </div>
-        <button class="btn-price" id="openModalBtn2">Calcular orçamento</button>
+        <?php
+        if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+            echo '<button class="btn-price" id="openModalBtn2">Calcular orçamento</button>';
+        if ($result_mensal->num_rows > 0) {
+            $row_mensal = $result_mensal->fetch_assoc();
+            echo '<a href="assinaturaMensal.php" class="btn-price">Finalizar</a>';
+        } else {
+        }  
+        } else {
+            echo '<button class="btn-price" id="openModalBtn2">Calcular orçamento</button>';
+        }
+        ?>
     </div>
    </div>
 
    <div id="myModal2" class="modal">
   <div class="modal-content">
     <span class="closeBtn2">&times;</span>
-    <h2>Plano mensal</h2>
+    <h2>Plano anual</h2>
     <p>Nossa precificação é baseada em valor: cobramos 2% do lucro bruto anual da sua empresa. Esse approach alinha nossos interesses ao sucesso da sua empresa, garantindo que nossa remuneração esteja diretamente vinculada ao seu desempenho financeiro. Para mais detalhes ou ajustes, entre em contato conosco.</p>
     <form action="./orcamentoAnual.php" method="post" enctype="multipart/form-data">
-      <label for="lucro2">Lucro Bruto do Último Mês:</label><br>
+      <label for="lucro2">Lucro Bruto do Último Ano:</label><br>
       <input type="number" id="lucro2" name="lucro2" placeholder="R$" required>
       <label for="file2">Anexar Comprovante de Rendimento (PDF, Excel):</label>
       <input class="file-input" type="file" id="file2" name="file2" accept=".pdf, .xls, .xlsx" required>
