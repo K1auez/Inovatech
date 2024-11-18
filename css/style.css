@@ -31,18 +31,21 @@ span {
 }
 
 /* header */
+
+.box-logo {
+  margin-left: 5%;
+}
+
 .box-logo img {
-  width: 170px;
+    width: 180px;
 }
 
 .header {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     background-color: transparent;
-    margin: 1% 5% 0 5%;
-    width: 90%;
+    margin-top: 1%;
 }
 
 .links {
@@ -85,35 +88,28 @@ span {
     color: white;
 }
 
+.autenticacao {
+  margin-right: 5%;
+}
+
 .login {
-  color: #848484;
   text-decoration: none;
-  cursor: pointer;
+  font-size: 17px;
+  color: #aeaeae;
+  margin: 0 10px;
 }
 
 .cadastro {
-  color: white;
   text-decoration: none;
-  margin-left: 10px;
-  cursor: pointer;
-}
-
-.login:hover {
-  transform: scale(1.05);
-}
-
-.cadastro:hover {
-  transform: scale(1.05);
+  color: white;
+  font-size: 17px;
 }
 
 .btn-sair {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
   text-decoration: none;
-  color: white;
-  cursor: pointer;
+  color: #FF2525;
+  font-size: 17px;
+
 }
 
 /* inicio */
@@ -396,6 +392,12 @@ main {
   border-radius: 20px;
 }
 
+.yt-box2 {
+  width: 30%;
+  height: 100%;
+  margin: 1px;
+}
+
 .yt-row {
 display: flex;
 flex-direction: row;
@@ -450,6 +452,30 @@ line-height: 2.8rem;
 font-weight: 700;
 color: white;
 margin: 0 10px;
+}
+
+.yt-anuncio {
+width: 98%;
+height: 15vh;
+background-color: #262628;
+border-radius: 10px;
+margin: 10px 0;
+}
+
+.yt-anunciotexto {
+width: 100%;
+height: 60%;
+background-color: rgba( 255, 255, 255, 0.05 );
+bottom: 0;
+border-radius: 10px 10px 0 0;
+}
+
+.yt-videos {
+width: 98%;
+height: 23%;
+background-color: #262628;
+border-radius: 10px;
+margin: 10px 0;
 }
 
 /* sobre */
@@ -612,10 +638,6 @@ margin: 0 10px;
     font-size: 4.5rem;
     line-height: 1;
   }
-
-  .product-price {
-    color: white;
-  }
   
   .price-container span:first-child {
     margin-top: 10px;
@@ -657,10 +679,11 @@ body.modal-open {
   overflow: hidden;
 }
 
+/* Atualize o CSS do modal para garantir que ele cubra o conteúdo */
 .modal {
   display: none;
   position: fixed;
-  z-index: 9999; 
+  z-index: 9999; /* Garanta que o modal esteja no topo */
   left: 0;
   top: 0;
   width: 100%;
@@ -671,6 +694,7 @@ body.modal-open {
   color: white;
 }
 
+/* CSS do conteúdo do modal */
 .modal-content {
   position: relative;
   margin: 5% auto;
