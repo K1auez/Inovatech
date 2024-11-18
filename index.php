@@ -75,6 +75,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
         <a class="sobre" href="#sobre">Sobre</a>
         <a class="contato" href="#contato">Contato</a>
     </div>
+
     <div class="autenticacao">
     <?php
                 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
