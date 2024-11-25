@@ -21,7 +21,6 @@
     <input type="password" id="password" name="password" placeholder="Senha">
     <button type="submit">Continuar</button>
 </form>
-<a href="redefinir.php">Esqueceu a senha? <span>Clique aqui</span></a>
 <a href="cadastro.php">Não tem uma conta? <span>Clique aqui</span></a>
 </div>
 </body>

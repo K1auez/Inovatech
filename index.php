@@ -277,12 +277,11 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
         </div>
         <?php
         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
-            echo '<button class="btn-price" id="openModalBtn2">Calcular orçamento</button>';
-        if ($result_mensal->num_rows > 0) {
-            $row_mensal = $result_mensal->fetch_assoc();
-            echo '<a href="assinaturaMensal.php" class="btn-price">Finalizar</a>';
-        } else {
-        }  
+            if ($result_anual->num_rows > 0) {
+                echo '<a href="assinaturaAnual.php" class="btn-price" id="openModalBtn2">Finalizar</a>';
+            } else {
+                echo '<button class="btn-price" id="openModalBtn2">Calcular orçamento</button>';
+            }
         } else {
             echo '<button class="btn-price" id="openModalBtn2">Calcular orçamento</button>';
         }
@@ -364,17 +363,17 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
         <div class="footer-links">
         <h3><span>Companhia</span></h3>
         <div class="underline"><div class="span"></div></div>
-        <a class="linksfot" href="">Sobre nós</a>
-        <a class="linksfot" href="">Política de privacidade</a>
+        <a class="linksfot" href="./footer/sobre-inovatech.pdf" download="sobre-inovatech.pdf">Sobre nós</a>
+        <a class="linksfot" href="./footer/politica-inovatech.pdf" download="politica-inovatech.pdf">Política de privacidade</a>
         </div>
     </div>
     <div class="container-footer">
         <div class="footer-links">
         <h3><span>Ajuda</span></h3>
         <div class="underline"><div class="span"></div></div>
-        <a class="linksfot" href="">FAQ</a>
-        <a class="linksfot" href="">Retornos</a>
-        <a class="linksfot" href="">Opções de pagamento</a>
+        <a class="linksfot" href="./footer/faq-inovatech.pdf" download="faq-inovatech.pdf">FAQ</a>
+        <a class="linksfot" href="./footer/retorno-inovatech.pdf" download="retorno-inovatech.pdf">Retornos</a>
+        <a class="linksfot" href="./footer/pagamento-inovatech.pdf" download="pagamento-inovatech.pdf">Opções de pagamento</a>
         </div>
     </div>
     </div><!-- responsive-footer-1 -->
